@@ -13,6 +13,9 @@ createApp({
   methods: {
     removeToDo: function (index) {
         this.todos.splice(index, 1);
+    },
+    addToDo: function () {
+        this.todos.push(this.newToDo);
     }
   }
 }).mount('#app');

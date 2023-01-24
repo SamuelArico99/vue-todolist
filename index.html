@@ -16,8 +16,8 @@
         </div>
 
         <div class="new-task">
-            <input type="text" placeholder="Insert New Task">
-            <button>Aggiungi</button>
+            <input type="text" v-model="newToDo" placeholder="Insert New Task">
+            <button @click="addToDo()">Aggiungi</button>
         </div>
 
         <div class="tasks-container">
