@@ -15,7 +15,16 @@ createApp({
         this.todos.splice(index, 1);
     },
     addToDo: function () {
-        this.todos.push(this.newToDo);
+        if (this.newToDo != '') {
+            this.todos.push(this.newToDo);
+            this.newToDo = '';
+        }
+
+
+    },
+    addClass: function () {
+        let line = document.getElementById("line");
+        line.classList.add("text-decoration");
     }
   }
 }).mount('#app');
