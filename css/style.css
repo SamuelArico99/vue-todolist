@@ -48,7 +48,9 @@
 .tasks-container ul {
     list-style: none;
 }
-
+.text-decoration{
+    text-decoration: line-through;
+}
 .task {
     border-bottom: 1px solid #DADEE1;
     padding: 10px; 
