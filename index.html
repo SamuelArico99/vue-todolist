@@ -16,15 +16,15 @@
         </div>
 
         <div class="new-task">
-            <input type="text" v-model="newToDo" placeholder="Insert New Task">
+            <input type="text"@keyup.enter="addToDo()"  v-model="newToDo" placeholder="Insert New Task">
             <button @click="addToDo()">Aggiungi</button>
         </div>
 
         <div class="tasks-container">
             <ul>
-                <li class="task " v-for="(todo,i) in todos" v-bind:class="checkdone(todo)" >
+                <li class="task " v-for="(todo,i) in todos" v-bind:class="checkdone(todo)" @click="todo.done = !todo.done" >
                     {{todo.text}}
-                    <i class="fa-solid fa-xmark" @click="removeToDo(i)"></i>
+                    <i class="fa-solid fa-xmark" @click.stop="removeToDo(i)"></i>
                 </li>
             </ul>
         </div>
