@@ -21,13 +21,12 @@
         </div>
 
         <div class="tasks-container">
-            <ul v-if="todos.length > 0">
-                <li class="task" id="line" @click="addClass()" v-for="(element, index) in todos">
-                    {{element}}
-                    <i class="fa-solid fa-xmark" @click="removeToDo(index)"></i>
+            <ul>
+                <li class="task " v-for="(todo,i) in todos" v-bind:class="checkdone(todo)" >
+                    {{todo.text}}
+                    <i class="fa-solid fa-xmark" @click="removeToDo(i)"></i>
                 </li>
             </ul>
-            <h2 v-else>Hai completato tutte le Task</h2>
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
